@@ -23,7 +23,11 @@ async def homepage(request):
 
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
-    subprocess.call(['fashion-segmentator','--image', 'https://s2.thcdn.com/productimg/300/300/12226182-5974707987048405.jpg'])
+    img_data = await request.form()
+    img_bytes = await (img_data['file'].read())
+    with open('input.png', 'wb') as input:
+        input.write(img_bytes)
+    subprocess.call(['fashion-segmentator', '--image', 'input.png'])
     return JSONResponse({'result': 'test'})
 
 
