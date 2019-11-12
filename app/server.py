@@ -23,12 +23,19 @@ async def homepage(request):
 
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
+
+    # get image bytes from form
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
+    
+    # save image as input.png
     with open('input.png', 'wb') as input:
         input.write(img_bytes)
+    
+    # run segmentation and save as result.png
     subprocess.call(['fashion-segmentator', '--image', 'input.png'])
-    return JSONResponse({'result': 'test'})
+    
+    return JSONResponse({'status': 'success'})
 
 
 if __name__ == '__main__':

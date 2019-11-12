@@ -7,10 +7,9 @@
 <body>
 <div>
   <div class='center'>
-    <div class='title'>Classify Bear Images 🐻</div>
-    <p>
-      Use images of <strong>teddy</strong> bears, <strong>black</strong> bears, <strong>grizzly</strong> bears, or
-      all three!
+    <div class='title'>Fine-Grained Segmentation</div>
+    <p class='description'>
+      Upload an image containing clothing items, and apply a fine-grained segmentation
     </p>
     <div class='content'>
       <div class='no-display'>
@@ -26,10 +25,10 @@
         <label id='upload-label'>No file chosen</label>
       </div>
       <div>
-        <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
+        <img id='image-picked' class='no-display' alt='Chosen Image' height='400'>
       </div>
       <div class='analyze'>
-        <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze</button>
+        <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Apply Segmentation</button>
       </div>
       <div class='result-label'>
         <label id='result-label'></label>
