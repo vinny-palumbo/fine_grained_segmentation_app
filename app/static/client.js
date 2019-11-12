@@ -32,7 +32,7 @@ function analyze() {
   xhr.onload = function(e) {
     if (this.readyState === 4) {
       var response = JSON.parse(e.target.responseText);
-      el("result-label").innerHTML = `Done!`;
+      el("result-label").innerHTML = `${response["status"]}`;
     }
     el("analyze-button").innerHTML = "Apply Segmentation";
   };

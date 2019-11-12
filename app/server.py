@@ -35,7 +35,7 @@ async def analyze(request):
     # run segmentation and save as result.png
     subprocess.call(['fashion-segmentator', '--image', 'input.png'])
     
-    return JSONResponse({'status': 'success'})
+    return JSONResponse({'status': 'Done!'})
 
 
 if __name__ == '__main__':
