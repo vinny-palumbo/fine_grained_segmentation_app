@@ -2,6 +2,7 @@ import sys
 from pathlib import Path
 import uvicorn
 import subprocess
+import shutil
 
 from starlette.applications import Starlette
 from starlette.middleware.cors import CORSMiddleware
@@ -29,11 +30,14 @@ async def analyze(request):
     img_bytes = await (img_data['file'].read())
     
     # save image as input.png
-    with open('input.png', 'wb') as input:
+    with open('app/static/input.png', 'wb') as input:
         input.write(img_bytes)
     
     # run segmentation and save as result.png
-    subprocess.call(['fashion-segmentator', '--image', 'input.png'])
+    subprocess.call(['fashion-segmentator', '--image', 'app/static/input.png'])
+    
+    # move output image to static files directory
+    shutil.move("result.png", "app/static/result.png")
     
     return JSONResponse({'status': 'Done!'})
 
