@@ -32,7 +32,7 @@ function analyze() {
   xhr.onload = function(e) {
     if (this.readyState === 4) {
 	  
-	  document.getElementById('image-picked').src="/static/result.png";
+	  document.getElementById('image-picked').src="/static/result.png?" + new Date().getTime();
 	  
       var response = JSON.parse(e.target.responseText);
       el("result-label").innerHTML = `${response["status"]}`;
