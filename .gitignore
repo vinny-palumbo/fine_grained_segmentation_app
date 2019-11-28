@@ -1,4 +1,4 @@
 *.jpg
 *.png
 app/__pycache__/
-instructions/
+maintenance/
