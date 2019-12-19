@@ -28,10 +28,6 @@ jobs:
             - v1-dependencies-
 
       - run:
-          name: Set Python Version
-          command: pyenv global 3.7.0
-
-      - run:
           name: Install Testing Dependencies
           command: |
             pip install -r requirements_tests.txt
