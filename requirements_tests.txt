@@ -1,0 +1,3 @@
+# only need libraries for testing the app
+pytest
+selenium
