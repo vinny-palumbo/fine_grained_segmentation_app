@@ -1,4 +1,4 @@
-# Fine-Grained Segmentation Web App
+# Fine-Grained Segmentation Web App  [![CircleCI](https://circleci.com/gh/vinny-palumbo/fine_grained_segmentation_app/tree/master.svg?style=svg)](https://circleci.com/gh/vinny-palumbo/fine_grained_segmentation_app/tree/master)
 
 Simple web app that takes an image provided by the user, and returns a fine-grained segmentation on clothing items.
 
