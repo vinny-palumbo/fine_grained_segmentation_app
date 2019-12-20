@@ -30,7 +30,7 @@ jobs:
       - run:
           name: Install Testing Dependencies
           command: |
-            pip install -r requirements_tests.txt
+            sudo pip install -r requirements_tests.txt
 
       - run:
           name: Build And Spin Up Web App
