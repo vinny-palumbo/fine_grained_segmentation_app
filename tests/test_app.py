@@ -93,7 +93,7 @@ def test_segmentation_on_an_image(browser_headed: Chrome):
     assert apply_button.text == "Segmenting Items..."
 
     # wait for segmentation to complete
-    time.sleep(60)
+    time.sleep(120)
 
     # see if result.png was generated
     result_element = browser_headed.find_element_by_id("image-picked")
