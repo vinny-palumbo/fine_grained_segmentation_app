@@ -66,10 +66,10 @@ def test_alert_triggered_when_clicking_on_apply_segmentation_with_no_input(brows
     
     # test alert message
     alert_obj = browser_headed.switch_to.alert
-    assert alert_obj.text == "Please select a file to segment!"
+    alert_text = alert_obj.text
+    alert_obj.accept() # close alert after test completed
     
-    # close alert after test completed
-    alert_obj.accept() 
+    assert alert_text == "Please select a file to segment!"
     
     
 def test_segmentation_on_an_image(browser_headed: Chrome):
